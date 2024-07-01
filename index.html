@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Henry Mishael</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <!-- header starts -->
+    <header>
+      <h5>hm</h5>
+      <div class="nav-links">
+        <a class="effect" href="index.html">About</a>
+        <a class="effect" href="index.html">Goals</a>
+        <!-- <a class="effect" href="index.html">Work</a> -->
+        <a class="effect" href="index.html">Contact</a>
+      </div>
+    </header>
+    <!-- header ends -->
+
+    <!-- main starts -->
+    <main>
+      <div class="bartender">
+        <div class="bar">
+          <div class="aLogo"><h1>hm</h1></div>
+        </div>
+      </div>
+      <!-- social links -->
+      <div class="sider">
+        <div class="socials">
+          <a href="https://github.com/henrymishael">
+          <div class="frame">
+            <img
+              src="./images/assets/icons8-github.svg"
+              alt=""
+              width="auto"
+              height="auto"
+            />
+          </div>
+          </a>
+          <a href="mailto:henrymishael.hm@gmail.com">
+          <div class="frame">
+            <img
+              src="./images/assets/EmailJ.svg"
+              alt=""
+              width="auto"
+              height="auto"
+            />
+          </div>
+          </a>
+          <a href="https://x.com/HenryMisha16433">
+          <div class="frame">
+            <img
+              src="./images/assets/TwitterJ.svg"
+              alt=""
+              width="auto"
+              height="auto"
+            />
+          </div>
+        </a>
+        </div>
+
+        <div class="divider"></div>
+        <div class="trademark">
+          <span>&copy;</span>/
+          <p>2024</p>
+        </div>
+      </div>
+      <div class="image_holder">
+        <figure class="first">
+          <div>
+            <h4 data-testid="slackDisplayName" class="Name">Umemiya</h4>
+            <span>
+              <p>Front-End Developer / UI Engineer / UI/UX Designer</p>
+              <!-- <p>Creating Seamless Web Interface for optimal user engagement</p> -->
+            </span>
+            <div class="time-container">
+              <div
+                data-testid="currentTimeUTC"
+                class="time"
+                id="current-time"
+              ></div>
+              <div data-testid="currentDay" class="day" id="current-day"></div>
+            </div>
+          </div>
+          <img
+            data-testid="slackProfilePicture"
+            src="./images/Hero2(250x333).png"
+            alt="Hero"
+            width="auto"
+            height="auto"
+          />
+        </figure>
+      </div>
+
+      <h1 class="heading">/Goals</h2>
+      <div class="image_holder">
+        <div>
+          <figure>
+            <div>
+              <h4 class="Name">2024</h4>
+              <span>
+                <p class="goals">
+                  secure an entry level role in frontend engineering/ UI
+                  engineering
+                </p>
+              </span>
+            </div>
+            <img
+              data-testid="slackProfilePicture"
+              src="./images/2024.png"
+              alt="Hero"
+              width="auto"
+              height="auto"
+            />
+          </figure>
+        </div>
+      </div>
+      <div class="image_holder">
+        <div>
+          <figure>
+            <div>
+              <h4 class="Name">2025</h4>
+              <span>
+                <p class="goals">
+                  Skill enhancement and introduction to cloud computing.
+                </p>
+              </span>
+            </div>
+            <img
+              data-testid="slackProfilePicture"
+              src="./images/2025.png"
+              alt="Hero"
+              width="auto"
+              height="auto"
+            />
+          </figure>
+        </div>
+      </div>
+      <div class="image_holder">
+        <div>
+          <figure>
+            <div>
+              <h4 class="Name">2026</h4>
+              <span>
+                <p class="goals">
+                  Transition into a cloud computing software engineer
+                </p>
+              </span>
+            </div>
+            <img
+              data-testid="slackProfilePicture"
+              src="./images/2026.png"
+              alt="Hero"
+              width="auto"
+              height="auto"
+            />
+          </figure>
+        </div>
+      </div>
+    </main>
+    <!-- main ends -->
+
+    <!-- footer starts -->
+    <footer>
+      <h3>CONTACT</h3>
+      <p>2023 - 2024 Umemiya</p>
+      <p data-testid="slackEmail">henrymishael.hm@gmail.com</p>
+    </footer>
+    <!-- footer ends -->
+
+    <script>
+      function updateTime() {
+        const timeElement = document.getElementById("current-time");
+        const dayElement = document.getElementById("current-day");
+
+        const now = new Date();
+        const utcNow = new Date(now.toUTCString());
+
+        // Get the current time in UTC
+        const hours = utcNow.getUTCHours().toString().padStart(2, "0");
+        const minutes = utcNow.getUTCMinutes().toString().padStart(2, "0");
+        const seconds = utcNow.getUTCSeconds().toString().padStart(2, "0");
+        const currentTime = `${hours}:${minutes}:${seconds}`;
+
+        // Get the current day of the week
+        const daysOfWeek = [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ];
+        const currentDay = daysOfWeek[utcNow.getUTCDay()];
+
+        // Update the HTML elements
+        timeElement.textContent = `Current UTC Time: ${currentTime}`;
+        dayElement.textContent = `Current Day: ${currentDay}`;
+      }
+
+      // Update time and day every second
+      setInterval(updateTime, 1000);
+
+      // Initial call to display the time immediately on page load
+      updateTime();
+    </script>
+  </body>
+</html>
